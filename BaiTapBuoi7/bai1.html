@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRUNG TÂM CẤU HÌNH GIAO DIỆN</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        background: #e5e7eb;
+        color: #111827;
+      }
+      .panel {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #f9fafb;
+        border: 1px solid #d1d5db;
+      }
+      .header {
+        margin: 0;
+        padding: 8px 10px;
+        background: #f98000;
+        color: #f9fafb;
+      }
+      .wrapper {
+        color: #111827;
+      }
+      .result {
+        padding-block: 7px;
+        background: #fff;
+        margin: 0;
+        border-block: 7px solid #f3f4f6;
+        color: #9ca3af;
+      }
+      .result:first-child {
+        border-top-width: 14px;
+      }
+      .result:last-child {
+        border-bottom-width: 14px;
+      }
+      label {
+        background: #eef2ff;
+        color: #4b5563;
+      }
+      .groupTitle {
+        margin: 16px 0 10px;
+        font-size: 18px;
+        background: #e5e7eb;
+        color: #111827;
+      }
+      /* light */
+      #light:checked + label {
+        background: #fff8cc;
+        color: #8b5e00;
+      }
+      #light:checked ~ .wrapper .light {
+        background: #fff8cc;
+        color: #111827;
+      }
+      /* dark */
+      #dark:checked + label {
+        background: #111827;
+        color: #f9fafb;
+      }
+      #dark:checked ~ .wrapper .dark {
+        background: #111827;
+        color: #f9fafb;
+      }
+      /* red */
+      #red:checked + label {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+      #red:checked ~ .wrapper .red {
+        background: #fee2e2;
+        color: #7f1d1d;
+      }
+      /* blue */
+      #blue:checked + label {
+        background: #dbeafe;
+        color: #1d4ed8;
+      }
+      #blue:checked ~ .wrapper .blue {
+        background: #dbeafe;
+        color: #1d4ed8;
+      }
+      /* green */
+      #green:checked + label {
+        background: #dcfce7;
+        color: #166534;
+      }
+      #green:checked ~ .wrapper .green {
+        background: #dcfce7;
+        color: #166534;
+      }
+      /* vi */
+      #vi:checked + label {
+        background: #bbf7d0;
+        color: #166534;
+      }
+      #vi:checked ~ .wrapper .vi {
+        color: #166534;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      /* en */
+      #en:checked + label {
+        background: #bfdbfe;
+        color: #1d4ed8;
+      }
+      #en:checked ~ .wrapper .en {
+        color: #1d4ed8;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      /* advanced */
+      #advanced:checked + label {
+        background: #fef3c7;
+        color: #92400e;
+      }
+      #advanced:checked ~ .wrapper .advanced {
+        background: #fef3c7;
+        color: #92400e;
+      }
+      /* eco */
+      #eco:checked + label {
+        background: #bbf7d0;
+        color: #15803d;
+      }
+      #eco:checked ~ .wrapper .eco {
+        background: #bbf7d0;
+        color: #166534;
+      }
+      /* warning */
+      #warning:checked + label {
+        background: #fee2e2;
+        color: #b91c1c;
+      }
+      #warning:checked ~ .wrapper .warning {
+        background: #fee2e2;
+        color: #b91c1c;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="panel">
+      <h1 class="header">TRUNG TÂM CẤU HÌNH GIAO DIỆN</h1>
+      <!-- theme -->
+      <h2 class="groupTitle">Chon giao dien(Theme)</h2>
+      <input type="radio" name="theme" id="light" />
+      <label for="light">Light</label>
+      <input type="radio" name="theme" id="dark" />
+      <label for="dark">Dark</label>
+      <!-- color -->
+      <h2 class="groupTitle">Chon mau chu dao(Color)</h2>
+      <input type="radio" name="color" id="red" />
+      <label for="red">Red</label>
+      <input type="radio" name="color" id="blue" />
+      <label for="blue">Blue</label>
+      <input type="radio" name="color" id="green" />
+      <label for="green">Green</label>
+      <!-- language -->
+      <h2 class="groupTitle">Chon ngon ngu(Language)</h2>
+      <input type="radio" name="language" id="vi" />
+      <label for="vi">VI</label>
+      <input type="radio" name="language" id="en" />
+      <label for="en">EN</label>
+      <!-- options -->
+      <h2 class="groupTitle">Tuy chon bo sung(Options - Checkbox)</h2>
+      <input type="checkbox" name="feature[]" id="advanced" />
+      <label for="advanced">Hien thi mo ta nang cao</label>
+      <input type="checkbox" name="feature[]" id="eco" />
+      <label for="eco">Bat che do Eco</label>
+      <input type="checkbox" name="feature[]" id="warning" />
+      <label for="warning">Hien thi canh bao quan trong</label>
+
+      <div class="wrapper">
+        <p class="result light">Theme Light: Giao dien sang, chu den.</p>
+        <p class="result dark">Theme Dark: Giao dien toi, chu sang.</p>
+        <p class="result red">Mau Red: duoc nhan manh khi chon Red.</p>
+        <p class="result blue">Mau Blue: duoc nhan manh khi chon Blue.</p>
+        <p class="result green">Mau Green: duoc nhan manh khi chon Green.</p>
+        <p class="result vi">
+          [VI] Xin chao ban! Khi chon VI, dong nay ro hon.
+        </p>
+        <p class="result en">[EN] Hello world! Khi chon EN, dong nay ro hon.</p>
+        <p class="result advanced">
+          Mo ta nang cao: giai thich ky hon ve cach cac lua chon anh huong den
+          giao dien.
+        </p>
+        <p class="result eco">
+          Che do Eco: mo phong trang thai tiet kiem tai nguyen cho giao dien.
+        </p>
+        <p class="result warning">
+          Canh bao quan trong: khu vuc dung de nhan manh thong tin he thong.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
