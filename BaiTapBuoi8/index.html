@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background: #eee;
+        width: calc(100vw - 16px);
+        min-height: 100vh;
+        margin: 8px;
+      }
+      .control-panel {
+        display: inline-block;
+        vertical-align: top;
+        width: calc(33% - 8px);
+        min-height: 100vh;
+        background: #f5f5f5;
+        margin-right: 8px;
+        padding: 12px;
+      }
+      .preview-column {
+        display: inline-block;
+        vertical-align: top;
+        width: calc(67% - 8px);
+      }
+      .preview-area {
+        width: 100%;
+        min-height: 100vh;
+        padding: 12px;
+      }
+      .preview-title {
+        margin: 0 0 8px;
+      }
+      input[type="radio"] {
+        display: none;
+      }
+      label {
+        display: inline-block;
+        background: #ddd;
+        padding: 0.3em 0.85em;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        cursor: pointer;
+      }
+      .skill span {
+        display: inline-block;
+        background: #f0f0f0;
+        padding: 0.3em 0.85em;
+        margin-right: 4px;
+        margin-bottom: 6px;
+        font-size: 0.85rem;
+      }
+      .user-name {
+        font-size: 2.375rem;
+        line-height: 1.2;
+        margin: 0;
+      }
+      .job {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin: 6px 0;
+      }
+      .hobby span {
+        display: inline-block;
+        margin-right: 10px;
+        margin-bottom: 6px;
+      }
+      .btn-contact {
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        padding: 0.45em 1.1em;
+        margin: 22px 0 0;
+        background: #1a1a1a;
+        font-size: 0.9rem;
+      }
+      #theme-Light:checked ~ .control-panel [for="theme-Light"] {
+        font-weight: bold;
+      }
+      #theme-Light:checked ~ .preview-column .preview-area {
+        background: white;
+      }
+      #theme-Gray:checked ~ .control-panel [for="theme-Gray"] {
+        font-weight: bold;
+      }
+      #theme-Gray:checked ~ .preview-column .preview-area {
+        background: lightgray;
+      }
+      #theme-Yellow:checked ~ .control-panel [for="theme-Yellow"] {
+        font-weight: bold;
+      }
+      #theme-Yellow:checked ~ .preview-column .preview-area {
+        background: lightyellow;
+      }
+      #theme-Blue:checked ~ .control-panel [for="theme-Blue"] {
+        font-weight: bold;
+      }
+      #theme-Blue:checked ~ .preview-column .preview-area {
+        background: lightblue;
+      }
+      #theme-Pink:checked ~ .control-panel [for="theme-Pink"] {
+        font-weight: bold;
+      }
+      #theme-Pink:checked ~ .preview-column .preview-area {
+        background: pink;
+      }
+      #ns-Small:checked ~ .control-panel [for="ns-Small"] {
+        font-weight: bold;
+      }
+      #ns-Small:checked ~ .preview-column .preview-area .user-name {
+        font-size: 2rem;
+      }
+      #ns-Medium:checked ~ .control-panel [for="ns-Medium"] {
+        font-weight: bold;
+      }
+      #ns-Medium:checked ~ .preview-column .preview-area .user-name {
+        font-size: 2.375rem;
+      }
+      #ns-Large:checked ~ .control-panel [for="ns-Large"] {
+        font-weight: bold;
+      }
+      #ns-Large:checked ~ .preview-column .preview-area .user-name {
+        font-size: 2.75rem;
+      }
+      #ts-Normal:checked ~ .control-panel [for="ts-Normal"] {
+        font-weight: bold;
+      }
+      #ts-Normal:checked ~ .preview-column .preview-area .user-name {
+        text-transform: none;
+      }
+      #ts-Uppercase:checked ~ .control-panel [for="ts-Uppercase"] {
+        font-weight: bold;
+      }
+      #ts-Uppercase:checked ~ .preview-column .preview-area .user-name {
+        text-transform: uppercase;
+      }
+      #nc-Dark:checked ~ .control-panel [for="nc-Dark"] {
+        font-weight: bold;
+      }
+      #nc-Dark:checked ~ .preview-column .preview-area .user-name {
+        color: #000;
+      }
+      #nc-Blue:checked ~ .control-panel [for="nc-Blue"] {
+        font-weight: bold;
+      }
+      #nc-Blue:checked ~ .preview-column .preview-area .user-name {
+        color: blue;
+      }
+      #nc-Green:checked ~ .control-panel [for="nc-Green"] {
+        font-weight: bold;
+      }
+      #nc-Green:checked ~ .preview-column .preview-area .user-name {
+        color: green;
+      }
+      #nc-Red:checked ~ .control-panel [for="nc-Red"] {
+        font-weight: bold;
+      }
+      #nc-Red:checked ~ .preview-column .preview-area .user-name {
+        color: red;
+      }
+      #ta-Left:checked ~ .control-panel [for="ta-Left"] {
+        font-weight: bold;
+      }
+      #ta-Left:checked ~ .preview-column .preview-area {
+        text-align: left;
+      }
+      #ta-Center:checked ~ .control-panel [for="ta-Center"] {
+        font-weight: bold;
+      }
+      #ta-Center:checked ~ .preview-column .preview-area {
+        text-align: center;
+      }
+      #ta-Right:checked ~ .control-panel [for="ta-Right"] {
+        font-weight: bold;
+      }
+      #ta-Right:checked ~ .preview-column .preview-area {
+        text-align: right;
+      }
+      #js-Small:checked ~ .control-panel [for="js-Small"] {
+        font-weight: bold;
+      }
+      #js-Small:checked ~ .preview-column .preview-area .job {
+        font-size: 0.9rem;
+      }
+      #js-Medium:checked ~ .control-panel [for="js-Medium"] {
+        font-weight: bold;
+      }
+      #js-Medium:checked ~ .preview-column .preview-area .job {
+        font-size: 1.1rem;
+      }
+      #js-Large:checked ~ .control-panel [for="js-Large"] {
+        font-weight: bold;
+      }
+      #js-Large:checked ~ .preview-column .preview-area .job {
+        font-size: 1.3rem;
+      }
+      #jls-Tight:checked ~ .control-panel [for="jls-Tight"] {
+        font-weight: bold;
+      }
+      #jls-Tight:checked ~ .preview-column .preview-area .job {
+        letter-spacing: -0.03em;
+      }
+      #jls-Normal:checked ~ .control-panel [for="jls-Normal"] {
+        font-weight: bold;
+      }
+      #jls-Normal:checked ~ .preview-column .preview-area .job {
+        letter-spacing: 0.02em;
+      }
+      #jls-Wide:checked ~ .control-panel [for="jls-Wide"] {
+        font-weight: bold;
+      }
+      #jls-Wide:checked ~ .preview-column .preview-area .job {
+        letter-spacing: 0.18em;
+      }
+      #ds-Small:checked ~ .control-panel [for="ds-Small"] {
+        font-weight: bold;
+      }
+      #ds-Small:checked ~ .preview-column .preview-area .desc {
+        font-size: 0.9rem;
+      }
+      #ds-Medium:checked ~ .control-panel [for="ds-Medium"] {
+        font-weight: bold;
+      }
+      #ds-Medium:checked ~ .preview-column .preview-area .desc {
+        font-size: 1.0125rem;
+      }
+      #ds-Large:checked ~ .control-panel [for="ds-Large"] {
+        font-weight: bold;
+      }
+      #ds-Large:checked ~ .preview-column .preview-area .desc {
+        font-size: 1.125rem;
+      }
+      #dlh-Tight:checked ~ .control-panel [for="dlh-Tight"] {
+        font-weight: bold;
+      }
+      #dlh-Tight:checked ~ .preview-column .preview-area .desc {
+        line-height: 1.6;
+      }
+      #dlh-Normal:checked ~ .control-panel [for="dlh-Normal"] {
+        font-weight: bold;
+      }
+      #dlh-Normal:checked ~ .preview-column .preview-area .desc {
+        line-height: 1.8;
+      }
+      #dlh-Loose:checked ~ .control-panel [for="dlh-Loose"] {
+        font-weight: bold;
+      }
+      #dlh-Loose:checked ~ .preview-column .preview-area .desc {
+        line-height: 2;
+      }
+      #contact-Dark:checked ~ .control-panel [for="contact-Dark"] {
+        font-weight: bold;
+      }
+      #contact-Dark:checked ~ .preview-column .preview-area .btn-contact {
+        background: #1a1a1a;
+      }
+      #contact-Blue:checked ~ .control-panel [for="contact-Blue"] {
+        font-weight: bold;
+      }
+      #contact-Blue:checked ~ .preview-column .preview-area .btn-contact {
+        background: blue;
+      }
+      #contact-Light:checked ~ .control-panel [for="contact-Light"] {
+        font-weight: bold;
+      }
+      #contact-Light:checked ~ .preview-column .preview-area .btn-contact {
+        background: #f5f5f5;
+        color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="radio" name="bg-theme" id="theme-Light" checked />
+    <input type="radio" name="bg-theme" id="theme-Gray" />
+    <input type="radio" name="bg-theme" id="theme-Yellow" />
+    <input type="radio" name="bg-theme" id="theme-Blue" />
+    <input type="radio" name="bg-theme" id="theme-Pink" />
+    <input type="radio" name="name-size" id="ns-Small" />
+    <input type="radio" name="name-size" id="ns-Medium" checked />
+    <input type="radio" name="name-size" id="ns-Large" />
+    <input type="radio" name="text-style" id="ts-Normal" checked />
+    <input type="radio" name="text-style" id="ts-Uppercase" />
+    <input type="radio" name="name-color" id="nc-Dark" checked />
+    <input type="radio" name="name-color" id="nc-Blue" />
+    <input type="radio" name="name-color" id="nc-Green" />
+    <input type="radio" name="name-color" id="nc-Red" />
+    <input type="radio" name="text-align" id="ta-Left" />
+    <input type="radio" name="text-align" id="ta-Center" checked />
+    <input type="radio" name="text-align" id="ta-Right" />
+    <input type="radio" name="job-size" id="js-Small" />
+    <input type="radio" name="job-size" id="js-Medium" checked />
+    <input type="radio" name="job-size" id="js-Large" />
+    <input type="radio" name="job-ls" id="jls-Tight" />
+    <input type="radio" name="job-ls" id="jls-Normal" checked />
+    <input type="radio" name="job-ls" id="jls-Wide" />
+    <input type="radio" name="desc-size" id="ds-Small" />
+    <input type="radio" name="desc-size" id="ds-Medium" checked />
+    <input type="radio" name="desc-size" id="ds-Large" />
+    <input type="radio" name="desc-lh" id="dlh-Tight" />
+    <input type="radio" name="desc-lh" id="dlh-Normal" checked />
+    <input type="radio" name="desc-lh" id="dlh-Loose" />
+    <input type="radio" name="contact" id="contact-Dark" checked />
+    <input type="radio" name="contact" id="contact-Blue" />
+    <input type="radio" name="contact" id="contact-Light" />
+
+    <!-- control-panel -->
+    <div class="control-panel">
+      <h2>Tuy chinh ho so</h2>
+
+      <h3>1. Mau nen ho so</h3>
+      <label for="theme-Light" class="btn-control">Light</label>
+
+      <label for="theme-Gray" class="btn-control">Gray</label>
+
+      <label for="theme-Yellow" class="btn-control">Yellow</label>
+
+      <label for="theme-Blue" class="btn-control">Blue</label>
+
+      <label for="theme-Pink" class="btn-control">Pink</label>
+
+      <h3>2. Kich thuoc ten</h3>
+      <label for="ns-Small" class="btn-control">Small</label>
+
+      <label for="ns-Medium" class="btn-control">Medium</label>
+
+      <label for="ns-Large" class="btn-control">Large</label>
+
+      <h3>3. Kieu chu ten</h3>
+      <label for="ts-Normal" class="btn-control">Normal</label>
+
+      <label for="ts-Uppercase" class="btn-control">Uppercase</label>
+
+      <h3>4. Mau chu ten</h3>
+      <label for="nc-Dark" class="btn-control">Dark</label>
+
+      <label for="nc-Blue" class="btn-control">Blue</label>
+
+      <label for="nc-Green" class="btn-control">Green</label>
+
+      <label for="nc-Red" class="btn-control">Red</label>
+
+      <h3>5. Can le ho so</h3>
+      <label for="ta-Left" class="btn-control">Left</label>
+
+      <label for="ta-Center" class="btn-control">Center</label>
+
+      <label for="ta-Right" class="btn-control">Right</label>
+
+      <h3>6. Kich thuoc nghe nghiep</h3>
+      <label for="js-Small" class="btn-control">Small</label>
+
+      <label for="js-Medium" class="btn-control">Medium</label>
+
+      <label for="js-Large" class="btn-control">Large</label>
+
+      <h3>7. Khoang cach chu nghe nghiep</h3>
+      <label for="jls-Tight" class="btn-control">Tight</label>
+
+      <label for="jls-Normal" class="btn-control">Normal</label>
+
+      <label for="jls-Wide" class="btn-control">Wide</label>
+
+      <h3>8. Kich thuoc mo ta</h3>
+      <label for="ds-Small" class="btn-control">Small</label>
+
+      <label for="ds-Medium" class="btn-control">Medium</label>
+
+      <label for="ds-Large" class="btn-control">Large</label>
+
+      <h3>9. Gian dong mo ta</h3>
+      <label for="dlh-Tight" class="btn-control">Tight</label>
+
+      <label for="dlh-Normal" class="btn-control">Normal</label>
+
+      <label for="dlh-Loose" class="btn-control">Loose</label>
+
+      <h3>10. Mau nut lien he</h3>
+      <label for="contact-Dark" class="btn-control">Dark</label>
+
+      <label for="contact-Blue" class="btn-control">Blue</label>
+
+      <label for="contact-Light" class="btn-control">Light</label>
+    </div>
+    <!-- preview-area -->
+    <div class="preview-column">
+      <h2 class="preview-title">Preview ho so ca nhan</h2>
+      <div class="preview-area">
+        <h1 class="user-name">Nguyen Van A</h1>
+        <p class="job">Frontend Developer · Ho Chi Minh City</p>
+        <p class="desc">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Exercitationem quidem, quae autem in laboriosam doloribus eum
+          molestiae odit fuga quos asperiores blanditiis quo nesciunt iusto. Ex
+          quia maiores ducimus ad, quod quisquam reprehenderit dignissimos.
+          Magnam, enim nesciunt error quas recusandae qui quaerat distinctio ad
+          quia vel consequatur. Eligendi laboriosam, voluptate sit cupiditate
+          doloribus ad libero dolorum eius similique magni optio aperiam fuga
+          natus repellat quam sed tempora omnis quod dolorem. Dolore ipsa,
+          distinctio consequuntur doloremque minus placeat perferendis adipisci
+          magnam, eius vel deserunt dolores ullam vero nam enim nemo iure
+          recusandae dolorum unde consequatur. Magni ratione ducimus facilis
+          provident animi.
+        </p>
+        <div class="skill">
+          <h4 class="skill__title">Ky nang</h4>
+          <span>Html</span>
+          <span>CSS</span>
+          <span>JS</span>
+          <span>React</span>
+          <span>Figma</span>
+          <span>Git</span>
+        </div>
+        <div class="hobby">
+          <h4 class="hobby-title">So thich</h4>
+          <span>Nhiep anh</span>
+          <span>Doc sach</span>
+          <span>Du lich</span>
+          <span>Ca phe</span>
+        </div>
+        <a href="#!" class="btn-contact">Lien he voi toi</a>
+      </div>
+    </div>
+  </body>
+</html>
