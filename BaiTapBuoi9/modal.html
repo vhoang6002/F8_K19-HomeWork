@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Reset box model de tinh toan kich thuoc de hon */
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Nut mo modal */
+      .open-btn {
+        color: #fff;
+        background: #3b82f6;
+        display: inline-block;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      /* Lop nen toi bao quanh modal */
+      .overlay {
+        margin-top: 50px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 120px 20px;
+      }
+
+      /* Hop noi dung modal */
+      .modal {
+        background: #fff;
+        width: 300px;
+        height: 200px;
+        margin: 0 auto;
+        padding: 50px 38px;
+      }
+
+      /* Mau chu noi dung trong modal */
+      .modal p {
+        color: #333;
+      }
+
+      /* Nut dong modal */
+      .close-btn {
+        display: inline-block;
+        background: #ef4444;
+        color: #fff;
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+
+      /* An checkbox va an overlay  */
+      #modal-toggle,
+      .overlay {
+        display: none;
+      }
+
+      /* Khi checkbox duoc check thi hien overlay + modal */
+      #modal-toggle:checked ~ .overlay {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" name="modal-toggle" id="modal-toggle" />
+    <label for="modal-toggle" class="open-btn">Mở modal</label>
+    <label for="modal-toggle" class="overlay">
+      <div class="modal">
+        <p>Đây là nội dung thông báo!</p>
+        <label for="modal-toggle" class="close-btn">Đóng</label>
+      </div>
+    </label>
+  </body>
+</html>
