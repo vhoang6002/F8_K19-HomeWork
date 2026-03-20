@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        display: inline-block;
+        margin-right: 20px;
+      }
+      .desc {
+        text-align: center;
+      }
+      .square {
+        width: 100px;
+        height: 100px;
+        border: 3px solid #d15841;
+      }
+      .rectangle {
+        width: 150px;
+        height: 100px;
+        border: 3px solid #699fda;
+      }
+      .triangle-up {
+        width: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid #6dc978;
+      }
+      .triangle-down {
+        width: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-top: 100px solid #e3a031;
+      }
+      .triangle-left {
+        width: 0;
+        border-top: 50px solid transparent;
+        border-bottom: 50px solid transparent;
+        border-right: 100px solid #905cb2;
+      }
+      .triangle-right {
+        width: 0;
+        border-top: 50px solid transparent;
+        border-bottom: 50px solid transparent;
+        border-left: 100px solid #d48332;
+      }
+      .trapezium {
+        width: 150px;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-bottom: 100px solid #61b99d;
+      }
+      .triangle-wide {
+        width: 0;
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+        border-bottom: 60px solid #3a485d;
+      }
+      .triangle-acute {
+        width: 0;
+        border-left: 24px solid transparent;
+        border-right: 24px solid transparent;
+        border-bottom: 100px solid #ad4430;
+      }
+      .triangle-isosceles {
+        width: 0;
+        border: 50px solid transparent;
+        border-bottom-color: #c05c19;
+      }
+      .arrow-right {
+        width: 0;
+        border: 25px solid transparent;
+        border-left: 50px solid #529e86;
+      }
+      .arrow-left {
+        width: 0;
+        border: 25px solid transparent;
+        border-right: 50px solid #8348a9;
+      }
+      .ribbon {
+        width: 0;
+        border-top: 50px solid #d15841;
+        border-bottom: 50px solid #d15841;
+        border-left: 80px solid #d15841;
+        border-right: 70px solid transparent;
+      }
+      .F8 .left,
+      .F8 .right {
+        display: inline-block;
+      }
+      .F8 .left .upper {
+        width: 110px;
+        height: 65px;
+        border: 30px solid #d15841;
+        border-right: none;
+      }
+      .F8 .left .lower {
+        width: 110px;
+        height: 95px;
+        border-left: 30px solid #d15841;
+      }
+      .F8 .right {
+        margin-left: 25px;
+      }
+      .F8 .right .upper,
+      .F8 .right .lower {
+        width: 90px;
+        height: 65px;
+        border: 30px solid #d15841;
+      }
+      .F8 .right .upper {
+        border-bottom-width: 15px;
+      }
+      .F8 .right .lower {
+        border-top-width: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="square"></div>
+      <p class="desc">1. Hinh vuong</p>
+    </div>
+    <div class="box">
+      <div class="rectangle"></div>
+      <p class="desc">2. Hinh chu nhat</p>
+    </div>
+    <div class="box">
+      <div class="triangle-up"></div>
+      <p class="desc">3. Tam giac len</p>
+    </div>
+    <div class="box">
+      <div class="triangle-down"></div>
+      <p class="desc">4. Tam giac xuong</p>
+    </div>
+    <div class="box">
+      <div class="triangle-left"></div>
+      <p class="desc">5. Tam giac trai</p>
+    </div>
+    <div class="box">
+      <div class="triangle-right"></div>
+      <p class="desc">6. Tam giac phai</p>
+    </div>
+    <div class="box">
+      <div class="trapezium"></div>
+      <p class="desc">7. Hinh thang</p>
+    </div>
+    <div class="box">
+      <div class="triangle-wide"></div>
+      <p class="desc">8. Tam giac rong</p>
+    </div>
+    <div class="box">
+      <div class="triangle-acute"></div>
+      <p class="desc">9. Tam giac nhon</p>
+    </div>
+    <div class="box">
+      <div class="triangle-isosceles"></div>
+      <p class="desc">10. Tam giac can</p>
+    </div>
+    <div class="box">
+      <div class="arrow-right"></div>
+      <p class="desc">11. Mui ten phai</p>
+    </div>
+    <div class="box">
+      <div class="arrow-left"></div>
+      <p class="desc">12. Mui ten trai</p>
+    </div>
+    <div class="box">
+      <div class="ribbon"></div>
+      <p class="desc">13. Ribbon/La co</p>
+    </div>
+    <div class="box">
+      <div class="F8">
+        <div class="left">
+          <div class="upper"></div>
+          <div class="lower"></div>
+        </div>
+        <div class="right">
+          <div class="upper"></div>
+          <div class="lower"></div>
+        </div>
+      </div>
+      <p class="desc">14. F8</p>
+    </div>
+  </body>
+</html>
