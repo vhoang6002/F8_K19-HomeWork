@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Reset co ban de tinh kich thuoc o dinh hon */
+      * {
+        box-sizing: border-box;
+      }
+
+      /* An checkbox dieu khien va an toast khi moi tai trang */
+      input,
+      .toast {
+        display: none;
+      }
+
+      /* Khi checkbox duoc check thi hien toast */
+      #toast-toggle:checked ~ .toast {
+        display: inline-block;
+      }
+
+      /* Nut mo thong bao */
+      .open-btn {
+        margin-top: 10px;
+        background: #333;
+        color: #fff;
+        display: inline-block;
+        text-align: center;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      /* toast */
+      .toast {
+        margin-left: 20px;
+        background: #66c267;
+        padding: 10px 20px;
+        color: #fff;
+      }
+
+      /* Loai bo margin mac dinh cua the p trong toast */
+      .toast p {
+        margin: 0;
+      }
+
+      /* Nut dong toast */
+      .close-btn {
+        margin-left: 10px;
+        background: #4c914d;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      /* Dat noi dung va nut dong nam ngang hang */
+      .toast p,
+      .close-btn {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" name="toast-toggle" id="toast-toggle" />
+    <label for="toast-toggle" class="open-btn">Hiện thông báo</label>
+    <div class="toast">
+      <p>🎉 Lưu thành công!</p>
+      <label for="toast-toggle" class="close-btn">x</label>
+    </div>
+  </body>
+</html>
