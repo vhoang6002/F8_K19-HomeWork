@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORM TƯ VẤN</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/form.css" />
+  </head>
+  <body>
+    <!-- Main page with button -->
+    <div class="main-container">
+      <label for="modal-toggle" class="btn-consult">Tư vấn ngay</label>
+    </div>
+
+    <!-- Modal checkbox (hidden) -->
+    <input type="checkbox" id="modal-toggle" class="modal-checkbox" />
+
+    <!-- Overlay and Modal -->
+    <label for="modal-toggle" class="modal-overlay"></label>
+
+    <div class="modal">
+      <!-- Close button -->
+      <label for="modal-toggle" class="modal-close">×</label>
+
+      <!-- Form content -->
+      <form
+        action="https://api-gateway.fullstack.edu.vn/action_page.php"
+        method="POST"
+        class="consultation-form"
+      >
+        <h2 class="form-title">Đăng ký tư vấn</h2>
+        <p class="form-subtitle">
+          Điền thông tin để được tư vấn lộ trình học phù hợp
+        </p>
+
+        <!-- Full Name Field -->
+        <div class="form-group">
+          <label for="fullname" class="form-label">
+            Họ và tên <span class="required">*</span>
+          </label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              placeholder="Nguyễn Văn A"
+              required
+              class="form-input"
+            />
+            <div class="tooltip">Nhập họ và tên đầy đủ của bạn</div>
+          </div>
+        </div>
+
+        <!-- Phone Field -->
+        <div class="form-group">
+          <label for="phone" class="form-label">
+            Số điện thoại <span class="required">*</span>
+          </label>
+          <div class="input-wrapper">
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="0912345678"
+              required
+              class="form-input"
+            />
+            <div class="tooltip">Số điện thoại để chúng tôi liên hệ tư vấn</div>
+          </div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <div class="input-wrapper">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@gmail.com"
+              class="form-input"
+            />
+            <div class="tooltip">
+              Email nhận thông tin khóa học (không bắt buộc)
+            </div>
+          </div>
+        </div>
+
+        <!-- Courses Checkboxes -->
+        <div class="form-group">
+          <label class="form-label">
+            Khóa học quan tâm <span class="required">*</span>
+          </label>
+          <div class="checkbox-group">
+            <!-- HTML & CSS -->
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="course-html"
+                name="courses"
+                value="html-css"
+              />
+              <label for="course-html" class="checkbox-label">
+                <span class="checkbox-box"></span>
+                HTML & CSS
+                <div class="tooltip">Khóa nền tảng xây dựng giao diện web</div>
+              </label>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="course-js"
+                name="courses"
+                value="javascript"
+              />
+              <label for="course-js" class="checkbox-label">
+                <span class="checkbox-box"></span>
+                JavaScript
+                <div class="tooltip">Ngôn ngữ lập trình cho web động</div>
+              </label>
+            </div>
+
+            <!-- Front-end pathway -->
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="course-frontend"
+                name="courses"
+                value="frontend"
+              />
+              <label for="course-frontend" class="checkbox-label">
+                <span class="checkbox-box"></span>
+                Front-end lộ trình
+                <div class="tooltip">
+                  Lộ trình hoàn chỉnh trở thành Front-end Developer
+                </div>
+              </label>
+            </div>
+
+            <!-- ReactJS -->
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="course-react"
+                name="courses"
+                value="react"
+              />
+              <label for="course-react" class="checkbox-label">
+                <span class="checkbox-box"></span>
+                ReactJS
+                <div class="tooltip">
+                  Thư viện JavaScript phổ biến nhất hiện nay
+                </div>
+              </label>
+            </div>
+
+            <!-- Other -->
+            <div class="checkbox-item">
+              <input
+                type="checkbox"
+                id="course-other"
+                name="courses"
+                value="other"
+              />
+              <label for="course-other" class="checkbox-label">
+                <span class="checkbox-box"></span>
+                Chưa rõ – cần tư vấn
+                <div class="tooltip">
+                  Chúng tôi sẽ tư vấn lộ trình phù hợp với bạn
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-submit">ĐĂNG KÝ TƯ VẤN NGAY</button>
+      </form>
+    </div>
+  </body>
+</html>
