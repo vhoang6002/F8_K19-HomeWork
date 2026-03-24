@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 1.6rem;
+  color: #333333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-header {
+  background: #ffffff;
+  border-bottom: 0.1rem solid #dddddd;
+}
+
+/* Header container centered at 1200px max width */
+.header-inner {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0.8rem 0;
+  font-size: 0;
+}
+
+.logo-link {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.logo {
+  width: 3.8rem;
+  height: 3.8rem;
+  vertical-align: middle;
+}
+
+.main-nav {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 2.5rem;
+  font-size: 1.6rem;
+}
+
+/* Top navigation (level 1) */
+.menu > .menu-item {
+  position: relative;
+  display: inline-block;
+  margin-right: 2.5rem;
+}
+
+.menu-link {
+  position: relative;
+  display: inline-block;
+  padding: 0.6rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333333;
+  border-bottom: 0.2rem solid transparent;
+}
+
+.has-submenu > .menu-link {
+  padding-right: 0;
+}
+
+.arrow-down {
+  display: inline-block;
+  padding-left: 0.4rem;
+  padding-right: 1.5rem;
+  color: #555555;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+.arrow-right {
+  position: absolute;
+  right: 1.5rem;
+  top: 0.9rem;
+  color: #777777;
+  font-size: 1rem;
+}
+
+.menu-item:hover > .menu-link {
+  color: #d62828;
+  border-bottom-color: #d62828;
+}
+
+/* Dropdown level 1 box */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  display: none;
+  min-width: 20rem;
+  background: #ffffff;
+  border: 0.1rem solid #dddddd;
+}
+
+.menu-item:hover > .level-1 {
+  display: block;
+}
+
+.submenu li {
+  position: relative;
+}
+
+.submenu a {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: #333333;
+}
+
+.submenu li:hover > a {
+  background: #f5f5f5;
+  color: #d62828;
+}
+
+/* Item that owns level 2 dropdown needs space for right arrow */
+.has-submenu-right > a {
+  padding-right: 2.5rem;
+}
+
+/* Position level 2 dropdown to the right of level 1 */
+.level-2 {
+  top: 0;
+  left: 100%;
+}
+
+/* Show level 2 dropdown while hovering its parent item */
+.has-submenu-right:hover > .level-2 {
+  display: block;
+}
