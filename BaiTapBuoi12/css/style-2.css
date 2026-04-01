@@ -1,0 +1,228 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background: #f8f9fa;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* =============header============= */
+.header {
+  text-align: center;
+}
+.header__title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-top: 47px;
+  margin-bottom: 35px;
+}
+.header__desc {
+  font-size: 15px;
+  color: #7f8c8d;
+}
+.header__desc:not(:last-child) {
+  margin-bottom: 10px;
+}
+/* =============main============= */
+.card {
+  margin-top: 42px;
+  width: 350px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+/* card-upper */
+.card-upper {
+  position: relative;
+}
+.card-upper__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+/* card-upper__top */
+.card-upper__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 18px;
+  left: 13px;
+  right: 13px;
+}
+.card-upper__list-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.card-upper__bage-for {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+.card-upper__bage-for-sale {
+  background: #e74c3c;
+}
+.card-upper__bage-for-rent {
+  background: #e67e22;
+}
+.card-upper__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #2c3e50;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-upper__bage-house {
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: #34495e;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+.card-upper__bage-price {
+  padding: 8px 20px;
+  border-radius: 20px;
+  background: #16a085;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+.card-upper__bage-price:hover {
+  box-shadow: 0 4px 12px rgba(22, 160, 133, 0.4);
+}
+/* card-upper__bottom */
+.card-upper__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 18px;
+  left: 13px;
+  right: 13px;
+}
+.card-upper__list-bottom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card-upper__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  outline: none;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.card-upper__share-btn {
+  color: #7f8c8d;
+}
+.card-upper__share-btn:hover {
+  background: #3498db;
+  color: #fff;
+}
+.card-upper__like-btn {
+  color: #e74c3c;
+}
+.card-upper__like-btn:hover {
+  background: #e74c3c;
+  color: #fff;
+}
+.mdi-heart{
+  display: none;
+}
+.card-upper__like-btn:hover .mdi-heart{
+  display: block;
+}
+.card-upper__like-btn:hover .mdi-heart-outline{
+  display: none;
+}
+/* card-content */
+.card-content {
+  padding: 18px;
+}
+.card-content__address {
+  color: #95a5a6;
+  font-size: 12px;
+}
+.card-content__title {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+.card-content__user {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+}
+.card-content__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: #fff;
+  background: #bdc3c7;
+}
+.card-content__name {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #7f8c8d;
+}
+.card-content__date {
+  margin-left: auto;
+  font-size: 12px;
+  color: #95a5a6;
+}
+/* card-content__info */
+.card-content__info {
+  margin-top: 15px;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ecf0f1;
+}
+.card-content__group {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-left: 10px;
+}
+.card-content__group span {
+  color: #95a5a6;
+  margin-right: 2px;
+}
+.card-content__group:first-child {
+  margin-left: 0;
+  margin-right: 20px;
+}
