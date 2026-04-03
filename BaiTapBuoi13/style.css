@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.strip {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.strip-1 {
+  background: forestgreen;
+}
+.strip-2 {
+  background: khaki;
+}
+.strip-3 {
+  background: dodgerblue;
+}
+.strip-4 {
+  background: orange;
+}
+.strip-5 {
+  background: violet;
+}
+.title {
+  font-family: "Helvetica", sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  color: #fff;
+}
+.img {
+  display: none;
+  object-fit: cover;
+  width: 100%;
+  min-height: 100vh;
+}
+/* hover effect */
+.container:hover .strip {
+  width: 0;
+}
+.container:hover .strip:hover {
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+}
+.strip:hover .title {
+  display: none;
+}
+.strip:hover .img {
+  display: block;
+}
+.strip:hover::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 10%);
+  z-index: 2;
+}
