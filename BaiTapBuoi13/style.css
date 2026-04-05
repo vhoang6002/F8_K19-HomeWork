@@ -14,7 +14,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 .strip-1 {
   background: forestgreen;
@@ -44,9 +43,6 @@
   min-height: 100vh;
 }
 /* hover effect */
-.container:hover .strip {
-  width: 0;
-}
 .container:hover .strip:hover {
   width: 100%;
   cursor: pointer;
