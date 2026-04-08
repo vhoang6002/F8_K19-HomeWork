@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Card Layout</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <input
+      class="header__menu-toggle"
+      type="checkbox"
+      id="menu-toggle"
+      hidden
+    />
+    <label for="menu-toggle" class="overlay"></label>
+
+    <!-- header -->
+    <header class="header">
+      <a href="#" class="header__logo">My Website</a>
+
+      <label for="menu-toggle" class="mdi mdi-menu"></label>
+
+      <nav class="header__nav">
+        <label for="menu-toggle" class="mdi mdi-close"></label>
+
+        <!-- header__list -->
+        <ul class="header__list">
+          <li class="header__item">
+            <a class="header__link" href="#">Link 1</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="#">Link 2</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="#">Link 3</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- main -->
+    <main class="main">
+      <div class="container">
+        <section class="content-area">
+          <h1 class="content-area__heading">This is the main heading</h1>
+
+          <p class="content-area__desc">
+            Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi
+            welsh onion daikon amaranth tatsoi tomatillo melon azuki bean
+            garlic.
+          </p>
+
+          <p class="content-area__desc">
+            Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot
+            courgette tatsoi pea sprouts fava bean collard greens dandelion okra
+            wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
+          </p>
+
+          <section class="card">
+            <article class="card__item">
+              <h2 class="card__header">Card One</h2>
+              <p class="card__body">
+                Turnip greens yarrow ricebean rutabaga endive cauliflower sea
+                lettuce kohlrabi amaranth water spinach avocado.
+              </p>
+            </article>
+
+            <article class="card__item">
+              <h2 class="card__header">Card Two</h2>
+              <p class="card__body">
+                Daikon napa cabbage asparagus winter purslane kale. Celery
+                potato scallion desert raisin horseradish spinach carrot soko.
+              </p>
+            </article>
+
+            <article class="card__item">
+              <h2 class="card__header">Card Three</h2>
+              <p class="card__body">
+                Lotus root water spinach fennel kombu maize bamboo shoot green
+                bean swiss chard seakale pumpkin onion chickpea gram corn pea.
+              </p>
+            </article>
+
+            <article class="card__item">
+              <h2 class="card__header">Card Four</h2>
+              <p class="card__body">
+                Lotus root water spinach fennel kombu maize bamboo shoot green
+                bean swiss chard seakale pumpkin onion chickpea gram corn pea.
+              </p>
+            </article>
+
+            <article class="card__item">
+              <h2 class="card__header">Card Five</h2>
+              <p class="card__body">
+                Nori grape silver beet broccoli kombu beet greens fava bean
+                potato quandong celery. Bunya nuts black-eyed pea prairie turnip
+                leek lentil turnip greens parsnip.
+              </p>
+            </article>
+          </section>
+        </section>
+
+        <aside class="main__sidebar">
+          <p>
+            Have you discovered all of the other excellent content on this
+            website?
+          </p>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>
